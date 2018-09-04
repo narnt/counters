@@ -1,0 +1,14 @@
+{% extends 'tracker/base.html' %}
+
+{% block content %}
+<article>
+    <h2><a href="{% url 'new_counter' %}">New counter</a></h2>
+	{% for count in counters %}
+    <article>
+    	<h2><a href="{% url 'counter_edit' pk=count.pk %}">{{ count.title }}</a></h2>
+    	<p>{{ count.count }}</p>
+    </article>
+	{% endfor %}
+    {{user}}
+</article>
+{% endblock %}

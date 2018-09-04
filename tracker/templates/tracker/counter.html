@@ -1,0 +1,14 @@
+{% extends 'tracker/base.html' %}
+
+{% block content %}
+<article>
+    <article>
+    	<h2>{{count.title}}</h2>
+    	<a class="btn btn-default" href="{% url 'counter_remove' pk=count.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+    	<form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    	</form>
+    </article>
+</article>
+{% endblock %}

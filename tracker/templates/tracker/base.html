@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        
+</head>
+<body>
+	<h1><a href="{% url 'all_counters' %}">Home</a></h1>
+	<p class="top-menu">Hello {{ user }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+	<a href="{% url 'register' %}">Registration</a>
+	{% block content %}
+    {% endblock %}
+</body>
+</html>
